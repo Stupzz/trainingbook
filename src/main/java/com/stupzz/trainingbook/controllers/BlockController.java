@@ -31,7 +31,7 @@ public class BlockController {
 
     private void guardExerciseExist(int indExercise) throws ExerciseNotFound {
         if(!exerciseService.exerciseExiste(indExercise)){
-            throw new ExerciseNotFound();
+            throw new ExerciseNotFound("Exercise " + indExercise + " not found");
         }
     }
 }

@@ -1,14 +1,13 @@
 package com.stupzz.trainingbook.Exceptions.NotFound;
 
 public class ExerciseNotFound extends NotFoundException{
-    public ExerciseNotFound() {
-        super();
+    public ExerciseNotFound(String message) {
+        super(message);
     }
 
     @Override
     public void handleException() {
         super.handleException();
-        msg = "Exercise not found";
     }
 
 }

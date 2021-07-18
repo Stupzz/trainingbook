@@ -14,7 +14,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler({ServerError.class})
     protected ResponseEntity<Object> handleConflict(RuntimeException ex, WebRequest request) {
         ((ServerError) ex).handleException();
-        return handleExceptionInternal(ex, ((ServerError) ex).getMsg(), new HttpHeaders(), ((ServerError) ex).getHttpStatus(), request);
+        return handleExceptionInternal(ex, ex.getMessage(), new HttpHeaders(), ((ServerError) ex).getHttpStatus(), request);
     }
 }
 

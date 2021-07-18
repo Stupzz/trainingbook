@@ -4,8 +4,8 @@ import com.stupzz.trainingbook.Exceptions.ServerError;
 import org.springframework.http.HttpStatus;
 
 public abstract class NotFoundException extends ServerError {
-    public NotFoundException() {
-        super();
+    public NotFoundException(String message) {
+        super(message);
     }
     @Override
     public void handleException(){
