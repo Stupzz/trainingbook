@@ -1,11 +1,9 @@
 package com.stupzz.trainingbook.controllers;
 
 import com.stupzz.trainingbook.domains.Exercise;
+import com.stupzz.trainingbook.domains.Muscle;
 import com.stupzz.trainingbook.services.ExerciseService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,5 +26,10 @@ public class ExerciseController {
     @GetMapping()
     public List<Exercise> getAllExercise() {
         return exerciseService.getAllExercise();
+    }
+
+    @PostMapping("find")
+    public List<Exercise> getExerciseForSpecificMuscle(@RequestBody List<Integer> muscles){
+        return exerciseService.getExerciseForSpecificMuscle(muscles);
     }
 }
