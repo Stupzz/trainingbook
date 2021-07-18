@@ -19,8 +19,8 @@ public class ExerciseController {
 
     //TODO: Delete this method
     @PostMapping("test")
-    public Exercise createRandomExercise() {
-        return exerciseService.test();
+    public void createRandomExercise() {
+//        return exerciseService.exerciseExiste(344);
     }
 
     @GetMapping()

@@ -20,7 +20,6 @@ public class BlockService {
 
     public Block createBlock(BlockDto blockDto) {
         Block block = new Block(blockDto);
-
         return this.mongoTemplate.insert(block);
     }
 

@@ -1,17 +1,13 @@
 package com.stupzz.trainingbook.services;
 
 import com.stupzz.trainingbook.domains.Exercise;
-import com.stupzz.trainingbook.domains.Muscle;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class ExerciseService {
@@ -39,5 +35,9 @@ public class ExerciseService {
         );
 
         return mongoTemplate.find(query, Exercise.class);
+    }
+
+    public boolean exerciseExiste(int indexExercise) {
+        return mongoTemplate.exists(Query.query(Criteria.where("_id").is(indexExercise)), Exercise.class);
     }
 }
