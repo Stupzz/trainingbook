@@ -25,7 +25,7 @@ public class ExerciseServiceTest {
     private ExerciseService exerciseService;
 
     @Test
-    void GetAllExerciseTest() {
+    void getAllExerciseTest() {
         Exercise exercise1 = new Exercise("test1", "desc1", Arrays.asList(0, 1, 2));
         Exercise exercise2 = new Exercise("test2", "desc2", Arrays.asList(1));
         List<Exercise> exercises = Arrays.asList(exercise1, exercise2);
